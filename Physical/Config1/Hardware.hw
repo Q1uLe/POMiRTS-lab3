@@ -1,11 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio Version=4.5.2.102?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
-  <Module Name="4PP065_0571_P74" Type="4PP065.0571-P74" Version="1.1.2.0" />
+  <Module Name="4PP065_0571_P74" Type="4PP065.0571-P74" Version="1.1.2.0">
+    <Connector Name="IF5">
+      <Parameter ID="ActivateDevice" Value="1" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="lab3_Config1" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="4PP065_0571_P74.IF4" />
+    <Parameter ID="TaskClassIdleTime" Value="2000" />
+    <Parameter ID="Cyclic1Duration" Value="2000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic1Output" Value="1" />
+  </Module>
   <Module Name="8I64xxxxxxx.00x-1" Type="8I64xxxxxxx.00x-1" Version="2.1.3.0">
     <Connection Connector="X2X1" TargetModule="X20BT9100" TargetConnector="X2X1">
       <Cable Type="X2XCable" Length="10" Version="1.0.0.2" />
     </Connection>
+    <Parameter ID="packedETAD" Value="packed" />
+    <Parameter ID="packedETI" Value="packed" />
+    <Parameter ID="packedCMDD" Value="packed" />
+    <Parameter ID="ACC" Value="30" />
+    <Parameter ID="DEC" Value="30" />
+    <Parameter ID="UNS" Value="220" />
+    <Parameter ID="NCR" Value="10" />
+    <Parameter ID="NSP" Value="890" />
+    <Parameter ID="COS" Value="64" />
+    <Parameter ID="RSC" Value="33000" />
   </Module>
   <Module Name="X20AT4222" Type="X20AT4222" Version="1.2.3.0">
     <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
