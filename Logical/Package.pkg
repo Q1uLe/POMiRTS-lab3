@@ -8,5 +8,6 @@
     <Object Type="Program" Language="IEC">ncsdcctrl</Object>
     <Object Type="DataObject" Language="Ett">acp10etxen</Object>
     <Object Type="Package" Description="Axis_Xobj">Axis_Xobj</Object>
+    <Object Type="Program" Language="ANSIC">SDCAxisCtrlX</Object>
   </Objects>
 </Package>

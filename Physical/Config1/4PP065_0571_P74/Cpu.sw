@@ -6,12 +6,35 @@
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
-  <TaskClass Name="Cyclic#4" />
+  <TaskClass Name="Cyclic#4">
+    <Task Name="SDCAxisCtr" Source="SDCAxisCtrlX.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+  </TaskClass>
+  <TaskClass Name="Cyclic#5" />
+  <TaskClass Name="Cyclic#6" />
+  <TaskClass Name="Cyclic#7" />
+  <TaskClass Name="Cyclic#8" />
+  <DataObjects>
+    <DataObject Name="Acp10sys" Source="" Memory="UserROM" Language="Binary" />
+  </DataObjects>
   <NcDataObjects>
     <NcDataObject Name="acp10etxen" Source="acp10etxen.dob" Memory="UserROM" Language="Ett" />
     <NcDataObject Name="Axis_Xa" Source="Axis_Xobj.Axis_Xa.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="Axis_Xi" Source="Axis_Xobj.Axis_Xi.dob" Memory="UserROM" Language="Ax" />
   </NcDataObjects>
+  <Binaries>
+    <BinaryObject Name="TCData" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Role" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="User" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="iomap" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Acp10map" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="acp10cfg" Source="" Memory="UserROM" Language="Binary" />
+  </Binaries>
   <Libraries>
     <LibraryObject Name="Acp10man" Source="Libraries.Acp10man.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="Acp10par" Source="Libraries.Acp10par.lby" Memory="UserROM" Language="Binary" Debugging="true" />
@@ -25,5 +48,9 @@
     <LibraryObject Name="Acp10sim" Source="Libraries.Acp10sim.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsIOTime" Source="Libraries.AsIOTime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="MotorContr" Source="Libraries.MotorContr.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="fileio" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="powerlnk" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>
