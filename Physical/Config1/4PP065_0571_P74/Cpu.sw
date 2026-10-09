@@ -24,5 +24,6 @@
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="Acp10sim" Source="Libraries.Acp10sim.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsIOTime" Source="Libraries.AsIOTime.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="MotorContr" Source="Libraries.MotorContr.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </Libraries>
 </SwConfiguration>
