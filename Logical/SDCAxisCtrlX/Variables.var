@@ -2,6 +2,8 @@ VAR
 	axis_X : FB_Axis; (*Переменная оси*)
 	coil_powered : BOOL; (*Включение обмотки возбуждения*)
 	coil_pwm_value : INT; (*Время импулься ШИМ*)
-	fb_controller : FB_Regulator; (*Переменная регулятора*)
+	fb_motor : FB_Motor;
+	fb_regulator : FB_Regulator; (*Переменная регулятора*)
 	pwm_period : UINT; (*Период ШИМ*)
+	fb_integrator : FB_Integrator;
 END_VAR

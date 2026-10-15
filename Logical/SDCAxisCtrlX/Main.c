@@ -7,12 +7,40 @@
 
 void _INIT ProgramInit(void)
 {
-
+	Axis_X_HW.EncIf1_Typ = ncSDC_ENC16;
+	Axis_X_HW.DiDoIf_Typ = ncSDC_DIDO;
+	Axis_X_HW.DrvIf_Typ = ncSDC_DRVSERVO16;
+	
+	strcpy(Axis_X_HW.EncIf1_Name, "Axis_X_EncIf");
+	strcpy(Axis_X_HW.DrvIf_Name, "Axis_X_DrvIf");
+	strcpy(Axis_X_HW.DiDoIf_Name, "Axis_X_DiDoIf");
+	Axis_X_EncIf.iEncOK = 1;
+	Axis_X_DrvIf.iDrvOK = 1;
+	Axis_X_DiDoIf.iDriveReady = 1;
+	
+	fb_regulator.dt = 0.002f;
+	//fb_motor.dt = 0.01f;
+	//fb_motor.ke = 0.016f;
+	//fb_motor.Tm = 0.1f;
+	fb_regulator.max_abs_value = 50;
+	fb_regulator.k_i = 0.16f;
+	fb_regulator.k_p = 0.0064f;
+	fb_regulator.iyOld = 0.0f;
+	
+	pwm_period = 200;
 }
 
 void _CYCLIC ProgramCyclic(void)
 {
-
+	Axis_X_EncIf.iLifeCnt++;
+	Axis_X_DiDoIf.iLifeCntDriveEnable++;
+	Axis_X_DiDoIf.iLifeCntDriveReady++;
+	Axis_X_DiDoIf.iLifeCntNegHwEnd++;
+	Axis_X_DiDoIf.iLifeCntPosHwEnd++;
+	Axis_X_DiDoIf.iLifeCntReference++;
+	Axis_X_DiDoIf.iLifeCnt++;
+	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
+	
 }
 
 void _EXIT ProgramExit(void)
