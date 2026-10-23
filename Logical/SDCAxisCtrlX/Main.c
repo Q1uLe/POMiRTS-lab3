@@ -27,7 +27,7 @@ void _INIT ProgramInit(void)
 	//fb_motor.Tm = 0.1f;
 	fb_regulator.max_abs_value = 24;
 	fb_regulator.k_i = 0.16f;
-	fb_regulator.k_p = 0.0064f;
+	fb_regulator.k_p = 0.0024f;
 	fb_regulator.iyOld = 0.0f;
 	
 	pwm_period = 200;
@@ -44,7 +44,7 @@ void _CYCLIC ProgramCyclic(void)
 	Axis_X_DrvIf.iLifeCnt++;
 	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
 	
-	sim_pos =+ axis_X.speed * axis_X.dt * 24.0f / 3000;
+	sim_pos += axis_X.speed * axis_X.dt * 24.0f / 3000;
 	axis_X.counter = (INT)sim_pos;
 	
 	Axis_X_EncIf.iActPos = axis_X.counter;

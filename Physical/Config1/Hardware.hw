@@ -4,9 +4,11 @@
   <Module Name="4PP065_0571_P74" Type="4PP065.0571-P74" Version="1.1.2.0">
     <Connector Name="IF5">
       <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="10.0.1.10" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
     </Connector>
-    <Parameter ID="ConfigurationID" Value="lab3_Config1" />
-    <Parameter ID="Simulation" Value="1" />
+    <Parameter ID="ConfigurationID" Value="labBR" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="4PP065_0571_P74.IF4" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />

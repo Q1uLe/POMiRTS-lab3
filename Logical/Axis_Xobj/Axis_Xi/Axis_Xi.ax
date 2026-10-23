@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<InitParameter Version="5.2.1" NcSwId="ACP10">
+<?AutomationStudio Version=4.5.2.102?>
+<InitParameter Version="5.02.1" NcSwId="ACP10">
   <Group ID="ACP10AXIS_typ">
     <Group ID="dig_in">
       <Group ID="level">
@@ -7,7 +8,7 @@
         <Parameter ID="pos_hw_end" Value="ncACTIV_HI" />
         <Parameter ID="neg_hw_end" Value="ncACTIV_HI" />
         <Parameter ID="trigger1" Value="ncACTIV_HI" />
-        <Parameter ID="trigger2" Value="ncACTIV_LO + ncQUICKSTOP" />
+        <Parameter ID="trigger2" Value="ncACTIV_HI" />
       </Group>
     </Group>
     <Group ID="encoder_if">
