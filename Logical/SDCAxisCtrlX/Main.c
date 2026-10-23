@@ -42,6 +42,17 @@ void _CYCLIC ProgramCyclic(void)
 	Axis_X_DrvIf.iLifeCnt++;
 	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
 	
+	Axis_X_EncIf.iActPos = axis_X.counter;
+	Axis_X_DiDoIf.iPosHwEnd = axis_X.endswitch_a_reached;
+	Axis_X_DiDoIf.iNegHwEnd = axis_X.endswitch_b_reached;
+	
+	coil_pwm_value = coil_powered ? 32767 : 0;
+	
+	fb_regulator.e = Axis_X_DrvIf.oSetPos * 6500.0f / 32767.0f - axis_X.speed;
+	FB_Regulator(&fb_regulator);
+	axis_X.u = fb_regulator.u;
+	FB_Axis(&axis_X);
+	
 }
 
 void _EXIT ProgramExit(void)
