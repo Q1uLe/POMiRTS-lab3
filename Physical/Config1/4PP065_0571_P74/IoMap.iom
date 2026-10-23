@@ -1,0 +1,4 @@
+VAR_CONFIG
+	::SDCAxisCtr:axis_X.endswitch_a_reached AT %IX."X20DI9371".DigitalInput02;
+	::SDCAxisCtr:axis_X.endswitch_b_reached AT %IX."X20DI9371".DigitalInput03;
+END_VAR

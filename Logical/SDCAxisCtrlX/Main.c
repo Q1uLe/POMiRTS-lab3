@@ -7,6 +7,8 @@
 
 void _INIT ProgramInit(void)
 {
+	axis_X.dt = 0.002f;
+	
 	Axis_X_HW.EncIf1_Typ = ncSDC_ENC16;
 	Axis_X_HW.DiDoIf_Typ = ncSDC_DIDO;
 	Axis_X_HW.DrvIf_Typ = ncSDC_DRVSERVO16;
@@ -23,7 +25,7 @@ void _INIT ProgramInit(void)
 	//fb_motor.dt = 0.01f;
 	//fb_motor.ke = 0.016f;
 	//fb_motor.Tm = 0.1f;
-	fb_regulator.max_abs_value = 50;
+	fb_regulator.max_abs_value = 24;
 	fb_regulator.k_i = 0.16f;
 	fb_regulator.k_p = 0.0064f;
 	fb_regulator.iyOld = 0.0f;
@@ -41,6 +43,9 @@ void _CYCLIC ProgramCyclic(void)
 	Axis_X_DiDoIf.iLifeCntReference++;
 	Axis_X_DrvIf.iLifeCnt++;
 	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
+	
+	sim_pos =+ axis_X.speed * axis_X.dt * 24.0f / 3000;
+	axis_X.counter = (INT)sim_pos;
 	
 	Axis_X_EncIf.iActPos = axis_X.counter;
 	Axis_X_DiDoIf.iPosHwEnd = axis_X.endswitch_a_reached;
