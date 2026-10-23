@@ -55,12 +55,13 @@ void _CYCLIC ProgramCyclic(void)
 	axis_X.u = fb_regulator.u;
 	
 	if (pos_hand && !axis_X.endswitch_a_reached)
-		axis_X.u = 6.0f;
+		axis_X.u = 24.0f;
 	else if (neg_hand && !axis_X.endswitch_b_reached)
-		axis_X.u = -6.0f;
+		axis_X.u = -24.0f;
 	
 	FB_Axis(&axis_X);
-	
+	mon_s = Axis_X.monitor.v;
+	mon_v = Axis_X.monitor.s;
 }
 
 void _EXIT ProgramExit(void)

@@ -8,4 +8,6 @@ VAR
 	fb_integrator : FB_Integrator;
 	neg_hand : BOOL;
 	pos_hand : BOOL;
+	mon_v : USINT;
+	mon_s : USINT;
 END_VAR
