@@ -44,9 +44,6 @@ void _CYCLIC ProgramCyclic(void)
 	Axis_X_DrvIf.iLifeCnt++;
 	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
 	
-	sim_pos += axis_X.speed * axis_X.dt * 24.0f / 3000;
-	axis_X.counter = (INT)sim_pos;
-	
 	Axis_X_EncIf.iActPos = axis_X.counter;
 	Axis_X_DiDoIf.iPosHwEnd = axis_X.endswitch_a_reached;
 	Axis_X_DiDoIf.iNegHwEnd = axis_X.endswitch_b_reached;
@@ -56,6 +53,12 @@ void _CYCLIC ProgramCyclic(void)
 	fb_regulator.e = Axis_X_DrvIf.oSetPos * 6500.0f / 32767.0f - axis_X.speed;
 	FB_Regulator(&fb_regulator);
 	axis_X.u = fb_regulator.u;
+	
+	if (pos_hand && !axis_X.endswitch_a_reached)
+		axis_X.u = 6.0f;
+	else if (neg_hand && !axis_X.endswitch_b_reached)
+		axis_X.u = -6.0f;
+	
 	FB_Axis(&axis_X);
 	
 }

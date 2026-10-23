@@ -1,5 +1,4 @@
 VAR
-	sim_pos : REAL; (*Имитация положения в импульсах*)
 	axis_X : FB_Axis; (*Переменная оси*)
 	coil_powered : BOOL; (*Включение обмотки возбуждения*)
 	coil_pwm_value : INT; (*Время импулься ШИМ*)
@@ -7,4 +6,6 @@ VAR
 	fb_regulator : FB_Regulator; (*Переменная регулятора*)
 	pwm_period : UINT; (*Период ШИМ*)
 	fb_integrator : FB_Integrator;
+	neg_hand : USINT;
+	pos_hand : BOOL;
 END_VAR

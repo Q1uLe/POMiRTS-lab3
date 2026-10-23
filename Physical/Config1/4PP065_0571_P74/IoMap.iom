@@ -1,4 +1,13 @@
 VAR_CONFIG
-	::SDCAxisCtr:axis_X.endswitch_a_reached AT %IX."X20DI9371".DigitalInput02;
-	::SDCAxisCtr:axis_X.endswitch_b_reached AT %IX."X20DI9371".DigitalInput03;
+	::SDCAxisCtr:pwm_period AT %QW."X20MM4456".PeriodDurationPWM;
+	::SDCAxisCtr:axis_X.pwm_value AT %QW."X20MM4456".PulseWidthCurrentPWM01;
+	::SDCAxisCtr:axis_X.reset_error AT %QX."X20MM4456".ClearError01;
+	::SDCAxisCtr:axis_X.reset_counter AT %QX."X20MM4456".ResetCounter01;
+	::SDCAxisCtr:axis_X.counter AT %IW."X20MM4456".Counter01;
+	::SDCAxisCtr:axis_X.endswitch_a_reached AT %IX."X20MM4456".StatusInput03;
+	::SDCAxisCtr:axis_X.endswitch_b_reached AT %IX."X20MM4456".StatusInput04;
+	::SDCAxisCtr:coil_pwm_value AT %QW."X20MM4456".PulseWidthCurrentPWM04;
+	::SDCAxisCtr:coil_powered AT %IX."X20DI9371".DigitalInput01;
+	::SDCAxisCtr:pos_hand AT %IX."X20DI9371".DigitalInput02;
+	::SDCAxisCtr:neg_hand AT %IX."X20DI9371".DigitalInput03;
 END_VAR
