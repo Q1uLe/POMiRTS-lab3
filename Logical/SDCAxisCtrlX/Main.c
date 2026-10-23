@@ -1,5 +1,6 @@
 
 #include <bur/plctypes.h>
+#include <string.h>
 
 #ifdef _DEFAULT_INCLUDES
 	#include <AsDefault.h>
@@ -16,6 +17,7 @@ void _INIT ProgramInit(void)
 	strcpy(Axis_X_HW.DiDoIf_Name, "Axis_X_DiDoIf");
 	Axis_X_EncIf.iEncOK = 1;
 	Axis_X_DrvIf.iDrvOK = 1;
+	Axis_X_DrvIf.iStatusEnable = 1;
 	Axis_X_DiDoIf.iDriveReady = 1;
 	
 	fb_regulator.dt = 0.002f;
@@ -38,7 +40,7 @@ void _CYCLIC ProgramCyclic(void)
 	Axis_X_DiDoIf.iLifeCntNegHwEnd++;
 	Axis_X_DiDoIf.iLifeCntPosHwEnd++;
 	Axis_X_DiDoIf.iLifeCntReference++;
-	Axis_X_DiDoIf.iLifeCnt++;
+	Axis_X_DrvIf.iLifeCnt++;
 	Axis_X_EncIf.iActTime = (INT)AsIOTimeCyclicStart();
 	
 }
