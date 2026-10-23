@@ -6,6 +6,6 @@ VAR
 	fb_regulator : FB_Regulator; (*Переменная регулятора*)
 	pwm_period : UINT; (*Период ШИМ*)
 	fb_integrator : FB_Integrator;
-	neg_hand : USINT;
+	neg_hand : BOOL;
 	pos_hand : BOOL;
 END_VAR
